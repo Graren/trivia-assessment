@@ -4,7 +4,6 @@ const initialContextState = {
   score: null,
   time: null,
   loading: false,
-  error: null,
   setScore: () => null,
   onError: () => null,
   requestingScore: () => null,
@@ -22,10 +21,6 @@ class ScoreProvider extends Component {
 
   setScore = (score, time) => {
     this.setState({ score, time, loading: false });
-  };
-
-  onError = error => {
-    this.setState({ loading: false, error });
   };
 
   requestingScore = () => {
