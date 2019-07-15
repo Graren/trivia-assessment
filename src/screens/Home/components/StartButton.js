@@ -1,9 +1,8 @@
-import React, { Fragment } from "react";
-import { View } from "react-native";
+import React from "react";
 import Button from "common/components/Button";
 import styles from "../styles";
 
-const StartButton = ({ onPress, text = "Start" }) => (
+const StartButton = ({ onPress, text = "Begin" }) => (
   <Button
     onPress={onPress}
     text={text}
