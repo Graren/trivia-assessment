@@ -6,7 +6,8 @@ import {
   secondary,
   gray800,
   correct,
-  wrong
+  wrong,
+  primary
 } from "constants/colors";
 
 export default StyleSheet.create({
@@ -43,7 +44,9 @@ export default StyleSheet.create({
     color: white
   },
   selectedOption: {
-    backgroundColor: secondary
+    backgroundColor: secondary,
+    borderColor: gray200,
+    borderWidth: 3
   },
   gameTitleContainer: {
     padding: 12
