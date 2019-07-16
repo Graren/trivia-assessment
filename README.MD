@@ -44,22 +44,20 @@ That will build and install the debug APK and packager for your device.
 
 ### Release build
 
-Follow the guide [here](https://facebook.github.io/react-native/docs/signed-apk-android) to get our own keystore to sign the APK with.
-
-then
+Follow the guide [here](https://facebook.github.io/react-native/docs/signed-apk-android) to get your own keystore to sign the APK with.
 
 ```
 cd android
 gradlew assembleRelease
 ```
 
-if you managed to build the apk or you got it from another source. Run the following command with a phone connected.
+If you managed to build the apk or you got it from another source. Run the following command with a phone connected.
 
 ```
 adb install <path-to-apk>.apk
 ```
 
-if the app is directly sent to your phone or downloaded via Google drive or something. Tap the APK and allow it's installation
+If the app is directly sent to your phone or downloaded via Google drive or something. Tap the APK and allow it's installation
 
 # Troubleshooting
 
