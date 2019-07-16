@@ -49,7 +49,7 @@ Follow the guide [here](https://facebook.github.io/react-native/docs/signed-apk-
 then
 
 ```
-cd android/gradle
+cd android
 gradlew assembleRelease
 ```
 
