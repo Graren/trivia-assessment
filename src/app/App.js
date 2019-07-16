@@ -4,14 +4,14 @@ import { AppStatusProvider } from "context/AppStatusContext";
 import { QuestionsProvider } from "context/QuestionsContext";
 import { ScoreProvider } from "context/ScoreContext";
 import AppContainer from "./containers/AppContainer";
+import { gray800 } from "constants/colors";
 import styles from "./styles";
-import { primary } from "constants/colors";
 
 class App extends Component {
   render() {
     return (
       <Fragment>
-        <StatusBar barStyle="light-content" backgroundColor={primary} />
+        <StatusBar barStyle="light-content" backgroundColor={gray800} />
         <SafeAreaView style={styles.container}>
           <ScrollView
             style={styles.scroll}

@@ -1,12 +1,12 @@
 import { StyleSheet, Platform } from "react-native";
-import { primary, secondary, gray200, white, black } from "constants/colors";
+import { secondary, gray200, white, black, gray800 } from "constants/colors";
 
 export default StyleSheet.create({
   container: {
     flex: 1
   },
   background: {
-    backgroundColor: primary
+    backgroundColor: gray800
   },
   homeContainer: {
     paddingHorizontal: 16,
