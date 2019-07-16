@@ -1,9 +1,9 @@
 import { StyleSheet } from "react-native";
-import { primary, white } from "constants/colors";
+import { secondary, white } from "constants/colors";
 
 export default StyleSheet.create({
   header: {
-    backgroundColor: primary,
+    backgroundColor: secondary,
     flexDirection: "row",
     width: "100%",
     height: 64

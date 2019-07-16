@@ -1,6 +1,6 @@
 export const primary = "#4a148c";
 
-export const secondary = "#ffc107";
+export const secondary = "#64b5f6";
 
 export const white = "#ffffff";
 

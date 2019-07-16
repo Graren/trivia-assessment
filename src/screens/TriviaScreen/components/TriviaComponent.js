@@ -3,6 +3,7 @@ import { View, Text, ActivityIndicator } from "react-native";
 import { requestQuestions } from "api/triviadb";
 import styles from "../styles";
 import GameComponent from "./GameComponent";
+import { secondary } from "constants/colors";
 
 class TriviaComponent extends PureComponent {
   state = {
@@ -125,7 +126,7 @@ class TriviaComponent extends PureComponent {
           </View>
         ) : loading || !question ? (
           <View style={[styles.container, styles.centeredContainer]}>
-            <ActivityIndicator size="large" color="#0000ff" />
+            <ActivityIndicator size="large" color={secondary} />
           </View>
         ) : (
           <GameComponent
