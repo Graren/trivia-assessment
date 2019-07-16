@@ -9,11 +9,17 @@ class Button extends PureComponent {
   };
 
   render() {
-    const { text, buttonStyle = {}, textStyle = {} } = this.props;
+    const {
+      text,
+      buttonStyle = {},
+      textStyle = {},
+      disabled = false
+    } = this.props;
     return (
       <TouchableOpacity
         onPress={this.onPress}
         style={[styles.button, buttonStyle]}
+        disabled={disabled}
       >
         <Text style={[styles.buttonText, textStyle]}>{text}</Text>
       </TouchableOpacity>

@@ -35,8 +35,9 @@ class TriviaComponent extends PureComponent {
   };
 
   componentDidUpdate() {
+    const { finished } = this.state;
     const { questions } = this.props;
-    if (questions && questions.length > 0 && !this._interval) {
+    if (!finished && questions && questions.length > 0 && !this._interval) {
       this.setState(
         () => ({
           time: 0
@@ -51,12 +52,13 @@ class TriviaComponent extends PureComponent {
   }
 
   onFinish = () => {
-    const { setScore } = this.props;
+    const { setScore, setHome } = this.props;
     const { correctAnswers, time } = this.state;
     clearInterval(this._interval);
     this._interval = null;
     this.setState({ finished: true }, () => {
       setScore(correctAnswers, time);
+      setHome();
     });
   };
 
@@ -68,6 +70,8 @@ class TriviaComponent extends PureComponent {
     }
     clear();
   };
+
+  onClose = () => {};
 
   onOptionSelect = opt => {
     this.setState({ selectedOption: opt });
@@ -102,7 +106,11 @@ class TriviaComponent extends PureComponent {
 
   render() {
     const { questions, loading, error } = this.props;
-    const { currentQuestionIndex, selectedOption } = this.state;
+    const {
+      currentQuestionIndex,
+      questionAnswered,
+      selectedOption
+    } = this.state;
     const question =
       questions && questions.length > 0
         ? questions[currentQuestionIndex]
@@ -125,6 +133,8 @@ class TriviaComponent extends PureComponent {
             selected={selectedOption}
             onSelect={this.onOptionSelect}
             onButtonPress={this.onButtonPress}
+            questionAnswered={questionAnswered}
+            last={currentQuestionIndex === questions.length - 1}
           />
         )}
       </Fragment>

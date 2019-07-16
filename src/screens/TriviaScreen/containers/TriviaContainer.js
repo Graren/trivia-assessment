@@ -2,6 +2,7 @@ import Trivia from "../components/TriviaComponent";
 import { connectContext } from "react-connect-context";
 import { QuestionsConsumer } from "context/QuestionsContext";
 import { ScoreConsumer } from "context/ScoreContext";
+import { AppStatusConsumer } from "context/AppStatusContext";
 import { compose, mapProps } from "recompose";
 
 const merge = props => {
@@ -13,7 +14,8 @@ const merge = props => {
     error,
     loading,
     onError,
-    setQuestions
+    setQuestions,
+    setHome
   } = props;
   return {
     setScore,
@@ -23,12 +25,14 @@ const merge = props => {
     requestingQuestions,
     clear,
     onError,
-    setQuestions
+    setQuestions,
+    setHome
   };
 };
 
 export default compose(
   connectContext(QuestionsConsumer),
   connectContext(ScoreConsumer),
+  connectContext(AppStatusConsumer),
   mapProps(merge)
 )(Trivia);
