@@ -5,7 +5,7 @@ import styles from "../styles";
 
 class HomeComponent extends PureComponent {
   render() {
-    const { score, time } = this.props;
+    const { score, time, highScore, bestTime } = this.props;
     return (
       <View style={[styles.container, styles.homeContainer, styles.background]}>
         <View style={styles.titleContainer}>
@@ -21,10 +21,16 @@ class HomeComponent extends PureComponent {
         </View>
         <View style={styles.container}>
           <Text style={styles.score}>
-            Best score: {score ? score : "Not recorded"}
+            High score: {highScore ? highScore : "Not recorded"}
           </Text>
           <Text style={styles.score}>
-            Best time: {time ? time : "Not recorded"}
+            Best time: {bestTime ? bestTime : "Not recorded"}
+          </Text>
+          <Text style={styles.score}>
+            Latest score: {score ? score : "Not recorded"}
+          </Text>
+          <Text style={styles.score}>
+            Latest time: {time ? time : "Not recorded"}
           </Text>
         </View>
         <View style={styles.buttonContainer}>

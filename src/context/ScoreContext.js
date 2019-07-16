@@ -3,6 +3,8 @@ import React, { Component } from "react";
 const initialContextState = {
   score: null,
   time: null,
+  highScore: null,
+  bestTime: null,
   setScore: () => null,
   onError: () => null,
   requestingScore: () => null,
@@ -19,7 +21,23 @@ class ScoreProvider extends Component {
   };
 
   setScore = (score, time) => {
-    this.setState({ score, time, loading: false });
+    const { highScore, bestTime } = this.state;
+    if (
+      !highScore ||
+      !bestTime ||
+      score > highScore ||
+      (score === highScore && time < bestTime)
+    ) {
+      this.setState({
+        score,
+        time,
+        highScore: score,
+        bestTime: time,
+        loading: false
+      });
+    } else {
+      this.setState({ score, time, loading: false });
+    }
   };
 
   requestingScore = () => {

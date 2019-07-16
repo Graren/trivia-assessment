@@ -4,10 +4,12 @@ import { compose, mapProps } from "recompose";
 import { ScoreConsumer } from "context/ScoreContext";
 
 const merge = props => {
-  const { score, time } = props;
+  const { score, time, highScore, bestTime } = props;
   return {
     score,
-    time
+    time,
+    highScore,
+    bestTime
   };
 };
 
