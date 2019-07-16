@@ -10,5 +10,13 @@ export default StyleSheet.create({
   },
   triviaContainer: {
     flex: 1
+  },
+  centeredContainer: {
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  error: {
+    textAlign: "center",
+    fontSize: 18
   }
 });

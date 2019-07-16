@@ -3,7 +3,6 @@ import React, { Component } from "react";
 const initialContextState = {
   score: null,
   time: null,
-  loading: false,
   setScore: () => null,
   onError: () => null,
   requestingScore: () => null,
