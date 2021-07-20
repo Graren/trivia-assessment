@@ -12,7 +12,7 @@
     "he": "^1.2.0",
     "react": "16.8.6",
     "react-connect-context": "^1.1.0",
-    "react-native": "0.60.3",
+    "react-native": "0.62.3",
     "react-native-vector-icons": "^6.6.0",
     "recompose": "^0.30.0"
   },
